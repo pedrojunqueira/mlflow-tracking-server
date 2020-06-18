@@ -11,7 +11,4 @@ services:
             - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
             - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
             - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
-        #volumes: 
-        #    - .:/mnt/mlflow
-        command: mlflow server --default-artifact-root s3://mlflow-pedro/ --host 0.0.0.0 -p 5000
-
+        

@@ -1,3 +1,3 @@
 #!/bin/sh
 # run.sh
-mlflow models serve -m $ARTIFACT_STORE -h $SERVER_HOST -p $SERVER_PORT --no-conda
+mlflow server --backend-store-uri sqlite:////mnt/mlflow/mlruns.db --default-artifact-root s3://mlflow-pedro/ --host 0.0.0.0 -p 5000
