@@ -1,0 +1,17 @@
+version: '3.7'
+
+services: 
+    web: 
+        build: ./mlflow
+        image: mlflow_server
+        container_name: mlflow_server
+        ports:
+            - 5555:5000
+        environment:
+            - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+            - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+            - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
+        #volumes: 
+        #    - .:/mnt/mlflow
+        command: mlflow server --default-artifact-root s3://mlflow-pedro/ --host 0.0.0.0 -p 5000
+
