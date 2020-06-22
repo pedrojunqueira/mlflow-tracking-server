@@ -9,5 +9,5 @@ with mlflow.start_run():
     # Log an artifact (output file)
     with open("output.txt", "w") as f:
         f.write("Hello world!")
-    mlflow.log_artifact("output.txt")
+    #mlflow.log_artifact("output.txt")
 

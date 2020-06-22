@@ -1,7 +1,7 @@
 FROM python:3.7-slim-buster
 
 # Install python packages
-RUN pip install mlflow boto3
+RUN pip install mlflow boto3 psycopg2-binary==2.8.5
 
 WORKDIR "/mnt/mlflow"
 
