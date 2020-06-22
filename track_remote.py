@@ -1,5 +1,7 @@
+#track_remote.py
+
 import mlflow
-remote_server_uri = "http://0.0.0.0:5555" # set to your server URI
+remote_server_uri = "http://0.0.0.0" # set to your server URI
 mlflow.set_tracking_uri(remote_server_uri)
 
 with mlflow.start_run():
@@ -9,5 +11,5 @@ with mlflow.start_run():
     # Log an artifact (output file)
     with open("output.txt", "w") as f:
         f.write("Hello world!")
-    #mlflow.log_artifact("output.txt")
+    mlflow.log_artifact("output.txt")
 
